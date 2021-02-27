@@ -8,23 +8,29 @@
 </head>
 <body>
     {% block body %}
-    <h1>Página principal</h1>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Usuario</th>
-                <th>E-mail</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for usuario in usuarios %}
-            <tr>
-                <td>{{ usuario.username }}</td>
-                <td>{{ usuario.email }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    
+    <navbar>
+        <div id="encabezado">
+            <h1>CALENDARK</h1>
+            <h3>¡Bienvenido a su agenda personal!</h3>
+        </div>
+        <div id="login">
+            <a href="{% url 'login' %}">
+                <button type="button">
+                    Iniciar sesión
+                </button>
+           </a>
+        </div>
+        <div id="registro">
+           <a href="{% url 'new_user' %}">
+                <button type="button">
+                    Crear usuario
+                </button>
+           </a>
+        </div>
+    </navbar>
+
+
     {% endblock body %}
 </body>
 </html>
